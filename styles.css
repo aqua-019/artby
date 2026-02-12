@@ -1,0 +1,460 @@
+/* ========================================
+   ARTBY RESIDENCE COMPLAINTS BOX
+   Static Forest Green on Black - Mobile Optimized
+   ======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ========================================
+   ANIMATIONS - MINIMAL & SUBTLE
+   ======================================== */
+
+@keyframes floatTitle {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0) rotate(0deg); }
+    10% { transform: translateX(-5px) rotate(-2deg); }
+    20% { transform: translateX(5px) rotate(2deg); }
+    30% { transform: translateX(-5px) rotate(-1deg); }
+    40% { transform: translateX(5px) rotate(1deg); }
+    50% { transform: translateX(-3px) rotate(-0.5deg); }
+    60% { transform: translateX(3px) rotate(0.5deg); }
+    70% { transform: translateX(-2px) rotate(-0.25deg); }
+    80% { transform: translateX(2px) rotate(0.25deg); }
+    90% { transform: translateX(-1px) rotate(0deg); }
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ========================================
+   BASE STYLES
+   ======================================== */
+
+body {
+    font-family: 'Courier New', monospace;
+    background-color: #000000;
+    color: #228B22;
+    min-height: 100vh;
+    padding: 20px 10px;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* ========================================
+   TYPOGRAPHY
+   ======================================== */
+
+h1 {
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
+    text-align: center;
+    margin-bottom: 40px;
+    color: #228B22;
+    font-weight: 900;
+    letter-spacing: 1px;
+    line-height: 1.2;
+    word-break: break-word;
+    padding: 0 10px;
+}
+
+h2 {
+    font-size: clamp(1.3rem, 5vw, 2rem);
+    margin-top: 50px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #228B22;
+    letter-spacing: 1px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: clamp(0.9rem, 3vw, 1rem);
+    font-weight: bold;
+    color: #228B22;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* ========================================
+   FORM CONTAINER
+   ======================================== */
+
+.form-container {
+    background: rgba(34, 139, 34, 0.05);
+    padding: clamp(20px, 5vw, 30px);
+    max-width: 600px;
+    margin: 0 auto;
+    border-radius: 8px;
+    border: 2px solid #228B22;
+    box-shadow: 0 4px 20px rgba(34, 139, 34, 0.1);
+}
+
+/* ========================================
+   FORM ELEMENTS
+   ======================================== */
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="datetime-local"],
+textarea {
+    width: 100%;
+    padding: 14px 16px;
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid #228B22;
+    color: #228B22;
+    font-family: 'Courier New', monospace;
+    font-size: clamp(0.9rem, 3vw, 1rem);
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+input[type="text"]:focus,
+input[type="datetime-local"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: #32CD32;
+    box-shadow: 0 0 0 3px rgba(34, 139, 34, 0.2);
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: rgba(34, 139, 34, 0.5);
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
+    max-height: 300px;
+}
+
+/* iOS specific fixes */
+input[type="text"],
+input[type="datetime-local"],
+textarea {
+    -webkit-tap-highlight-color: rgba(34, 139, 34, 0.2);
+}
+
+/* ========================================
+   CHECKBOX
+   ======================================== */
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding: 10px 0;
+    -webkit-tap-highlight-color: transparent;
+}
+
+input[type="checkbox"] {
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
+    cursor: pointer;
+    position: relative;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid #228B22;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+input[type="checkbox"]:checked {
+    background: #228B22;
+}
+
+input[type="checkbox"]:checked::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #000;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.checkbox-label {
+    color: #228B22;
+    font-size: clamp(0.9rem, 3vw, 1rem);
+    cursor: pointer;
+    user-select: none;
+}
+
+/* ========================================
+   BUTTONS
+   ======================================== */
+
+.submit-container {
+    text-align: center;
+    margin-top: 25px;
+}
+
+button[type="submit"],
+.save-btn {
+    padding: clamp(12px, 3vw, 16px) clamp(30px, 8vw, 50px);
+    font-size: clamp(0.9rem, 3vw, 1.1rem);
+    font-weight: bold;
+    background: #228B22;
+    color: #000;
+    border: 2px solid #228B22;
+    cursor: pointer;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+}
+
+button[type="submit"]:hover,
+.save-btn:hover {
+    background: #32CD32;
+    border-color: #32CD32;
+    transform: scale(1.02);
+}
+
+button[type="submit"]:active,
+.save-btn:active {
+    transform: scale(0.98);
+}
+
+/* ========================================
+   COMPLAINTS LIST
+   ======================================== */
+
+.complaints-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.save-btn {
+    padding: clamp(10px, 2.5vw, 12px) clamp(20px, 5vw, 30px);
+    font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+    background: rgba(34, 139, 34, 0.2);
+    color: #228B22;
+    border: 2px solid #228B22;
+}
+
+.save-btn:hover {
+    background: rgba(34, 139, 34, 0.4);
+    color: #32CD32;
+    border-color: #32CD32;
+}
+
+.complaints-list {
+    background: rgba(34, 139, 34, 0.03);
+    padding: clamp(20px, 4vw, 30px);
+    border: 2px solid #228B22;
+    min-height: 200px;
+    border-radius: 8px;
+}
+
+.complaint-item {
+    padding: clamp(15px, 4vw, 20px);
+    margin-bottom: 15px;
+    background: rgba(0, 0, 0, 0.6);
+    border-left: 4px solid #228B22;
+    border-radius: 6px;
+    color: #228B22;
+    transition: all 0.3s ease;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.complaint-item:hover {
+    transform: translateX(5px);
+    border-left-width: 6px;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.complaint-submitted {
+    animation: slideIn 0.5s ease-out;
+}
+
+.complaint-header {
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: clamp(0.85rem, 2.8vw, 0.95rem);
+    color: #32CD32;
+}
+
+.complaint-body {
+    opacity: 0.95;
+    line-height: 1.5;
+    font-size: clamp(0.85rem, 2.8vw, 0.95rem);
+}
+
+/* ========================================
+   CHARACTER COUNTER
+   ======================================== */
+
+.char-counter {
+    text-align: right;
+    margin-top: 6px;
+    font-size: clamp(0.75rem, 2.5vw, 0.85rem);
+    color: #228B22;
+    opacity: 0.7;
+}
+
+/* ========================================
+   HAPTIC FEEDBACK
+   ======================================== */
+
+.haptic-flash {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(34, 139, 34, 0.2) 0%, transparent 70%);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.1s;
+    z-index: 9999;
+}
+
+.haptic-flash.active {
+    opacity: 1;
+}
+
+/* ========================================
+   MOBILE OPTIMIZATIONS
+   ======================================== */
+
+@media (max-width: 768px) {
+    body {
+        padding: 15px 8px;
+    }
+
+    h1 {
+        margin-bottom: 30px;
+    }
+
+    .form-container {
+        padding: 20px 15px;
+    }
+
+    .complaints-list {
+        padding: 15px;
+    }
+
+    textarea {
+        min-height: 120px;
+    }
+
+    /* Increase tap targets for mobile */
+    button[type="submit"],
+    .save-btn {
+        min-height: 48px;
+    }
+
+    input[type="checkbox"] {
+        min-width: 32px;
+        min-height: 32px;
+    }
+}
+
+/* iOS specific optimizations */
+@supports (-webkit-touch-callout: none) {
+    input[type="text"],
+    input[type="datetime-local"],
+    textarea {
+        font-size: 16px; /* Prevent zoom on focus */
+    }
+}
+
+/* Android specific optimizations */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+    select,
+    textarea,
+    input {
+        font-size: 16px;
+    }
+}
+
+/* ========================================
+   ACCESSIBILITY
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+    body {
+        background-color: #000;
+    }
+    
+    * {
+        color: #00FF00;
+        border-color: #00FF00;
+    }
+}
+
+/* ========================================
+   PRINT STYLES
+   ======================================== */
+
+@media print {
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .form-container,
+    .save-btn {
+        display: none;
+    }
+    
+    .complaint-item {
+        page-break-inside: avoid;
+        border-color: black;
+        color: black;
+    }
+}

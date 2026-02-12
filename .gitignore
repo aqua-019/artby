@@ -1,0 +1,81 @@
+# ========================================
+# ARTBY COMPLAINTS APP - GITIGNORE
+# ========================================
+
+# ========================================
+# Dependencies (if ever added)
+# ========================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# ========================================
+# Environment Variables
+# ========================================
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# ========================================
+# Build & Distribution
+# ========================================
+dist/
+build/
+.cache/
+.vercel
+
+# ========================================
+# IDE & Editor Files
+# ========================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+.DS_Store
+Thumbs.db
+
+# ========================================
+# OS Files
+# ========================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# ========================================
+# Logs
+# ========================================
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ========================================
+# Testing
+# ========================================
+coverage/
+.nyc_output/
+*.lcov
+
+# ========================================
+# Temporary Files
+# ========================================
+*.tmp
+*.temp
+.cache
+
+# ========================================
+# Keep These Files
+# ========================================
+!.gitkeep

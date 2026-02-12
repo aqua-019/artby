@@ -1,0 +1,38 @@
+{
+  "name": "artby-complaints-app",
+  "version": "1.0.0",
+  "description": "Tactile maximalist web app for managing residence complaints with kinetic typography and squishy UI",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "dev": "python -m http.server 8000",
+    "deploy": "vercel --prod"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YOUR_USERNAME/artby-complaints-app.git"
+  },
+  "keywords": [
+    "tactile-maximalism",
+    "kinetic-typography",
+    "squishy-ui",
+    "complaints-management",
+    "residence-management",
+    "matrix-green",
+    "emerald-green",
+    "haptic-feedback",
+    "vanilla-javascript",
+    "no-dependencies"
+  ],
+  "author": "Aquatic",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/YOUR_USERNAME/artby-complaints-app/issues"
+  },
+  "homepage": "https://github.com/YOUR_USERNAME/artby-complaints-app#readme",
+  "devDependencies": {},
+  "dependencies": {},
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
