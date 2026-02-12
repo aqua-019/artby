@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Artby Residence Complaints Box</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <h1 class="title">The Artby Residence Complaints Box</h1>
+            <div class="decorative-line"></div>
+        </header>
+
+        <!-- Submission Form -->
+        <section class="submission-section">
+            <div class="bento-grid">
+                <!-- Issue/Report Card -->
+                <div class="bento-card card-large">
+                    <label for="issue" class="card-label">Issue / Report</label>
+                    <textarea 
+                        id="issue" 
+                        class="input-field textarea-field" 
+                        placeholder="Describe the issue in detail..."
+                        maxlength="10000"
+                        rows="6"
+                    ></textarea>
+                    <div class="char-counter">
+                        <span id="charCount">0</span> / 10,000 characters
+                    </div>
+                </div>
+
+                <!-- Unit Number Card -->
+                <div class="bento-card card-medium">
+                    <div class="label-with-toggle">
+                        <label for="unitNumber" class="card-label">Unit Number</label>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="unitToggle" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    <input 
+                        type="text" 
+                        id="unitNumber" 
+                        class="input-field" 
+                        placeholder="e.g., 4B, 12A, PH-3"
+                        maxlength="20"
+                    >
+                </div>
+
+                <!-- Date/Time Card -->
+                <div class="bento-card card-medium">
+                    <label for="dateTime" class="card-label">Date / Time Occurred</label>
+                    <input 
+                        type="datetime-local" 
+                        id="dateTime" 
+                        class="input-field"
+                    >
+                </div>
+
+                <!-- Submit Button Card -->
+                <div class="bento-card card-submit">
+                    <button id="submitBtn" class="submit-button">
+                        <span class="button-text">Submit Complaint</span>
+                        <span class="button-icon">→</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Complaints Display Section -->
+        <section class="complaints-section">
+            <div class="section-header">
+                <h2 class="section-title">Recent Complaints</h2>
+                <div class="complaint-counter">
+                    <span id="complaintCount">0</span> Total
+                </div>
+            </div>
+            
+            <div id="complaintsGrid" class="complaints-grid">
+                <!-- Complaints will be dynamically inserted here -->
+            </div>
+        </section>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">
+        <span class="toast-icon">✓</span>
+        <span class="toast-message">Complaint submitted successfully</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
